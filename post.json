@@ -1,0 +1,14 @@
+{
+  "duration": "2",
+  "price": "240",
+  "firstName": "Muhammad",
+  "lastName": "faisal",
+  "carName": "bmw",
+  "startDate": "new Date()",
+  "endDate": "new Date()",
+  "email": "asdasds@gmail.com",
+  "bankPlaceHolder": "faisal",
+  "bankFrom": "bca",
+  "phoneNumber": "089516543215",
+  "proofPayment": "file()"
+}

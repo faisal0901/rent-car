@@ -1,0 +1,88 @@
+{
+  "item": [
+    {
+      "id": 1,
+      "carName": "Bmw",
+      "price": 200,
+      "image": [
+        { "imageId": 1, "imageUrl": "/public/images/blalbal.jpg" },
+        { "imageId": 2, "imageUrl": "/public/images/blalbal.jpg" }
+      ],
+      "carRealiseDate": "2017",
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "addres": {
+        "streetName": "1194  Lightning Point Drive",
+        "City": "Memphis",
+        "Country": "Tennessee",
+        "zipCode": 38110,
+        "phone": [
+          {
+            "phoneNumber": "701-733-7247",
+            "mobileNumber": "701-371-7774"
+          }
+        ],
+        "lattitude": "35.1490215",
+        "longtitude": "-90.0516285"
+      }
+    },
+    {
+      "id": 1,
+      "carName": "Bmw",
+      "price": 200,
+      "image": [
+        { "imageId": 1, "imageUrl": "/public/images/blalbal.jpg" },
+        { "imageId": 2, "imageUrl": "/public/images/blalbal.jpg" }
+      ],
+      "carRealiseDate": "2017",
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "addres": {
+        "streetName": "12121 sdasdsadasds",
+        "City": "Memphis",
+        "Country": "Tennessee",
+        "zipCode": 38110,
+        "phone": [
+          {
+            "phoneNumber": "701-733-7247",
+            "mobileNumber": "701-371-7774"
+          }
+        ],
+        "lattitude": "35.1490215",
+        "longtitude": "-90.0516285"
+      }
+    }
+  ]
+}

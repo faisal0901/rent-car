@@ -1,0 +1,228 @@
+{
+  "item": [
+    {
+      "id": 1,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "carName": "honda Mazda",
+      "carReleaseDate": "2017",
+      "Price": 200,
+      "feature": [
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Ac"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Fuel"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "Manual"
+        },
+        {
+          "featureImage": "/public/images/ac-featured.jpg",
+          "featureQuantity": "4"
+        }
+      ],
+      "image": [
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        },
+        {
+          "imageId": 1,
+          "imageUrl": "/public/image/car.jpg"
+        }
+      ]
+    }
+  ],
+  "rating": [
+    {
+      "image": "/public/image/user.jpg",
+      "Name": "bayu",
+      "job": "traveler",
+      "rating": 5
+    },
+    {
+      "image": "/public/image/user.jpg",
+      "Name": "bayu",
+      "job": "traveler",
+      "rating": 5
+    },
+    {
+      "image": "/public/image/user.jpg",
+      "Name": "bayu",
+      "job": "traveler",
+      "rating": 5
+    }
+  ]
+}

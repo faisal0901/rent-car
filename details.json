@@ -1,0 +1,63 @@
+{
+  "id": 1,
+  "carName": "HondaMaza",
+  "price": "200",
+  "image": [
+    {
+      "imageId": 1,
+      "imageUrl": "/public/images/ac-featured.jpg"
+    },
+    {
+      "imageId": 1,
+      "imageUrl": "/public/images/ac-featured.jpg"
+    },
+    {
+      "imageId": 1,
+      "imageUrl": "/public/images/ac-featured.jpg"
+    },
+    {
+      "imageId": 1,
+      "imageUrl": "/public/images/ac-featured.jpg"
+    },
+    {
+      "imageId": 1,
+      "imageUrl": "/public/images/ac-featured.jpg"
+    }
+  ],
+  "carRealiseDate": "2017",
+  "carEngine": "1200cc",
+  "carGas": "50ltr",
+  "carHorsePower": "1200cc",
+  "feature": [
+    {
+      "featureImage": "/public/images/ac-featured.jpg",
+      "featureQuantity": "Ac"
+    },
+    {
+      "featureImage": "/public/images/ac-featured.jpg",
+      "featureQuantity": "Fuel"
+    },
+    {
+      "featureImage": "/public/images/ac-featured.jpg",
+      "featureQuantity": "Manual"
+    },
+    {
+      "featureImage": "/public/images/ac-featured.jpg",
+      "featureQuantity": "4"
+    }
+  ],
+  "addres": {
+    "streetName": "1194  Lightning Point Drive",
+    "City": "Memphis",
+    "Country": "Tennessee",
+    "zipCode": 38110,
+    "phone": [
+      {
+        "phoneNumber": "701-733-7247",
+        "mobileNumber": "701-371-7774"
+      }
+    ],
+    "lattitude": "35.1490215",
+    "longtitude": "-90.0516285"
+  }
+}
