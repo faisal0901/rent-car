@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.header-banner {
+  height: 538px;
+  background-image: url("assets/images/car-banner.png");
+  background-repeat: no-repeat;
+}
+.header-banner:before {
+  @apply w-full absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  content: "";
+  background: linear-gradient(
+    269.9deg,
+    rgba(255, 255, 255, 0.23) 28.28%,
+    rgba(0, 0, 0, 0.21) 59.06%
+  );
+}
