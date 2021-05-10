@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import iconCelendar from "assets/images/celendar-removebg-preview.png";
@@ -10,21 +10,9 @@ export default function CheckoutForm({ data }) {
     city: "",
   };
   const [state, setState] = useState(initState);
-  // const checkDays = (state) => {
-  //   const getDay = state.startDate.getDay();
-  //   const getTime = state.startDate.getTime();
-  //   const date = new Date();
-  //   const currentDay = date.getDay();
-  //   const currentTime = date.getTime();
-
-  //   if (getDay === currentDay && getTime === currentTime) {
-  //     return "false";
-  //   }
-  //   return "true";
-  // };
-  // console.log(checkDays(state));
-  const refDate = useRef(null);
-  console.log(refDate);
+  const duration = Math.abs(state.endDate - state.startDate);
+  const diffDays = Math.ceil(duration / (1000 * 60 * 60 * 24));
+  console.log(diffDays);
   const HandleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -83,7 +71,6 @@ export default function CheckoutForm({ data }) {
               <DatePicker
                 selected={state.startDate}
                 showTimeSelect
-                ref={refDate}
                 minDate={new Date()}
                 name="startDate"
                 selectsStart
