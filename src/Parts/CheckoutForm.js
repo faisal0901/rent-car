@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import iconCelendar from "assets/images/celendar-removebg-preview.png";
 export default function CheckoutForm({ data }) {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
   const initState = {
-    startDate,
-    endDate,
+    startDate: new Date(),
+    endDate: new Date(),
     country: "",
     city: "",
   };
   const [state, setState] = useState(initState);
-  console.log(state);
+  // const checkDays = (state) => {
+  //   const getDay = state.startDate.getDay();
+  //   const getTime = state.startDate.getTime();
+  //   const date = new Date();
+  //   const currentDay = date.getDay();
+  //   const currentTime = date.getTime();
 
+  //   if (getDay === currentDay && getTime === currentTime) {
+  //     return "false";
+  //   }
+  //   return "true";
+  // };
+  // console.log(checkDays(state));
+  const refDate = useRef(null);
+  console.log(refDate);
   const HandleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
@@ -72,8 +83,12 @@ export default function CheckoutForm({ data }) {
               <DatePicker
                 selected={state.startDate}
                 showTimeSelect
+                ref={refDate}
                 minDate={new Date()}
                 name="startDate"
+                selectsStart
+                startDate={state.startDate}
+                endDate={state.endDate}
                 className="bg-gray-100  w-96 rounded h-10 focus:outline-none"
                 onChange={(e) => setState({ ...state, startDate: e })}
                 dateFormat="MMMM d, yyyy h:mm aa"
@@ -94,6 +109,8 @@ export default function CheckoutForm({ data }) {
                 selected={state.endDate}
                 showTimeSelect
                 name="endDate"
+                startDate={state.startDate}
+                endDate={state.endDate}
                 minDate={state.startDate}
                 className="bg-gray-100  w-96 rounded h-10 focus:outline-none"
                 onChange={(e) => setState({ ...state, endDate: e })}
@@ -103,12 +120,9 @@ export default function CheckoutForm({ data }) {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="w-11/12 mt-7 ">
-            <button
-              disabled
-              className="w-full bg-blue-600 rounded  focus:outline-none text-white text-xl rounded-sm h-10"
-            >
-              find Now
+          <div className="w-11/12 mt-9 ">
+            <button className="w-full bg-blue-600 rounded focus:outline-none text-white text-xl rounded-sm h-10">
+              Find Now
             </button>
           </div>
         </div>

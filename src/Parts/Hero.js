@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CheckoutForm from "./CheckoutForm";
 
 export default function Hero({ data }) {
