@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import "react-datepicker/dist/react-datepicker.css";
 import "assets/css/style.css";
 import LandingPage from "pages/LandingPage";
 import Example from "pages/Example";

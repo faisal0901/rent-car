@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 
 export default function Hero({ data }) {
-  const initState = {
-    country: "",
-    city: "",
-    days: 0,
-  };
-  const [state, setState] = useState(initState);
   return (
     <div className="flex justify-between items-center ">
       <div className="w-1/2">
