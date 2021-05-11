@@ -19,3 +19,6 @@
     rgba(0, 0, 0, 0.21) 59.06%
   );
 }
+.image-client:hover {
+  filter: grayscale(0);
+}
