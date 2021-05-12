@@ -2,6 +2,7 @@ import Header from "Parts/Header";
 import Hero from "Parts/Hero";
 import React from "react";
 import country from "json/Country.json";
+import HomePage from "json/HomePage.json";
 import Client from "Parts/Client";
 import Cars from "Parts/Cars";
 export default function LandingPage() {
@@ -23,7 +24,7 @@ export default function LandingPage() {
           <h3 className="text-start inline text-3xl font-semibold text-blue-900">
             Popular car
           </h3>
-          <Cars />
+          <Cars data={HomePage.cars} />
         </div>
       </section>
     </>

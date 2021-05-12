@@ -1,5 +1,5 @@
 {
-  "car": [
+  "cars": [
     {
       "id": 1,
       "carName": "honda Mazda",
@@ -7,30 +7,30 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car1.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car.png"
         }
       ]
     },
@@ -41,30 +41,30 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car2.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car2.png"
         }
       ]
     },
@@ -75,30 +75,30 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car4.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car.png"
         }
       ]
     },
@@ -109,30 +109,30 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car4.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car.png"
         }
       ]
     },
@@ -143,30 +143,30 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.jpeg",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car5.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car.png"
         }
       ]
     },
@@ -177,49 +177,49 @@
       "Price": 200,
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
       "image": [
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car7.jpeg"
         },
         {
           "imageId": 1,
-          "imageUrl": "/public/image/car.jpg"
+          "imageUrl": "/image/car.png"
         }
       ]
     }
   ],
   "rating": [
     {
-      "image": "/public/image/user.jpg",
+      "image": "/image/user.png",
       "Name": "bayu",
       "job": "traveler",
       "rating": 5
     },
     {
-      "image": "/public/image/user.jpg",
+      "image": "/image/user.png",
       "Name": "bayu",
       "job": "traveler",
       "rating": 5
     },
     {
-      "image": "/public/image/user.jpg",
+      "image": "/image/user.png",
       "Name": "bayu",
       "job": "traveler",
       "rating": 5
