@@ -24,7 +24,7 @@ export default function Client() {
         <img
           src={HondaIcon}
           alt="rent a bwm"
-          className="w-full filter grayscale hover:filter-none image-client  hover:grayscale-0 cursor-pointer"
+          className="w-full filter grayscale hover:filter-none image-client hover:grayscale-0 cursor-pointer"
         />
       </div>
       <div className="w-1/4">

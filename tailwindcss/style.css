@@ -22,3 +22,6 @@
 .image-client:hover {
   filter: grayscale(0);
 }
+.star {
+  mask: url("assets/images/Stars.svg") no-repeat center left;
+}

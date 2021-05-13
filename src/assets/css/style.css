@@ -29812,6 +29812,15 @@ video {
   );
 }
 
+.image-client:hover {
+  filter: grayscale(0);
+}
+
+.star {
+  -webkit-mask: url("assets/images/Stars.svg") no-repeat center left;
+          mask: url("assets/images/Stars.svg") no-repeat center left;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

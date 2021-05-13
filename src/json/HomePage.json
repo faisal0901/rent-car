@@ -4,6 +4,9 @@
       "id": 1,
       "carName": "honda Mazda",
       "carReleaseDate": "2017",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
+      "rating": 4,
       "Price": 200,
       "feature": [
         {
@@ -37,6 +40,8 @@
     {
       "id": 4,
       "carName": "honda Mazda",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
       "carReleaseDate": "2017",
       "Price": 200,
       "feature": [
@@ -72,6 +77,8 @@
       "id": 4,
       "carName": "honda Mazda",
       "carReleaseDate": "2017",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
       "Price": 200,
       "feature": [
         {
@@ -106,6 +113,8 @@
       "id": 4,
       "carName": "honda Mazda",
       "carReleaseDate": "2017",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
       "Price": 200,
       "feature": [
         {
@@ -140,6 +149,8 @@
       "id": 4,
       "carName": "honda Mazda",
       "carReleaseDate": "2017",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
       "Price": 200,
       "feature": [
         {
@@ -173,6 +184,8 @@
     {
       "id": 4,
       "carName": "honda Mazda",
+      "carCity": "jakarta",
+      "carCountry": " Indonesia",
       "carReleaseDate": "2017",
       "Price": 200,
       "feature": [

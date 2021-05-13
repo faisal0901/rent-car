@@ -5,6 +5,7 @@ import country from "json/Country.json";
 import HomePage from "json/HomePage.json";
 import Client from "Parts/Client";
 import Cars from "Parts/Cars";
+import Testimony from "Parts/Testimony";
 export default function LandingPage() {
   return (
     <>
@@ -25,6 +26,14 @@ export default function LandingPage() {
             Popular car
           </h3>
           <Cars data={HomePage.cars} />
+        </div>
+      </section>
+      <section className="mt-20">
+        <div className="container mx-auto">
+          <h3 className="text-start inline text-3xl font-semibold text-blue-900">
+            What People Says
+          </h3>
+          <Testimony />
         </div>
       </section>
     </>
