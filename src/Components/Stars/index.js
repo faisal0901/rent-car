@@ -24,7 +24,7 @@ export default function Stars({ height, width, className, value, spacing }) {
     stars.push(
       <div
         key={`starsDecimals`}
-        className="star absolute inline-flex "
+        className="star absolute inline-flex bg-yellow-400 "
         style={{
           zIndex: 2,
           left: leftPos,

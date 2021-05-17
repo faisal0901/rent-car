@@ -1,10 +1,10 @@
 import React from "react";
 import CheckoutForm from "./CheckoutForm";
 
-export default function Hero({ data }) {
+export default function Hero({ data, submitCheckout }) {
   return (
     <div className="flex justify-between items-center ">
-      <div className="w-1/2">
+      <div className="md:w-1/2 md:block hidden">
         <h1 className="text-5xl text-white mt-20  font-semibold ">
           <div className="mb-3"> Find You Dream</div>
           <div>Car For Vacation</div>
@@ -15,8 +15,8 @@ export default function Hero({ data }) {
           Lorem, ipsum dolor.
         </h6>
       </div>
-      <div className="w-1/2 relative">
-        <CheckoutForm data={data} />
+      <div className="w-full md:w-1/2 relative">
+        <CheckoutForm data={data} submitCheckout={submitCheckout} />
       </div>
     </div>
   );

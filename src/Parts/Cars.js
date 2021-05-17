@@ -4,19 +4,19 @@ import Stars from "Components/Stars";
 export default function Cars({ data }) {
   console.log(data);
   return (
-    <div className="grid grid-cols-12 gap-5">
+    <div className="grid grid-cols-12 gap-5 justify-center ">
       {data.map((val, index) => {
         return (
           <div
-            className="col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
+            className="col-span-12  sm:col-span-6 lg:col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
             key={`car-${index}`}
           >
-            <figure className="h-72">
+            <figure className="h-70">
               <img
                 src={val.image[0].imageUrl ?? "car"}
                 alt="car"
                 className="object-cover  py-4 rounded w-full overflow-hidden"
-                style={{ height: 300 }}
+                style={{ height: 285 }}
               />
             </figure>
             <div className="justify-between flex  items-center border-b-2 border-gray-300">

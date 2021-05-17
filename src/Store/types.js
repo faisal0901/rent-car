@@ -1,0 +1,1 @@
+export const SUBMIT_CHECKOUT = "SUBMIT_CHECKOUT";

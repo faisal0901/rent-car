@@ -1,9 +1,5 @@
-
-import React from "react";
+import React, { useState } from "react";
 export default function Example() {
-  return (
-    <div>
-
-    </div>
-  );
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  return <></>;
 }

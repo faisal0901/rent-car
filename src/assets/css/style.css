@@ -29821,6 +29821,57 @@ video {
           mask: url("assets/images/Stars.svg") no-repeat center left;
 }
 
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.toggle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  z-index: 999;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.toggle:before, .toggle:after {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  position: absolute;
+  right: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 200ms;
+}
+
+.toggle:before,
+.toggle:after {
+  content: "";
+  height: 3px;
+  transform-origin: center;
+}
+
+.toggle:before {
+  top: 26%;
+  width: 20px;
+}
+
+.toggle:after {
+  top: 58%;
+  width: 12px;
+}
+
+.toggle.active:before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.toggle.active:after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

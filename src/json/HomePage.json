@@ -6,7 +6,7 @@
       "carReleaseDate": "2017",
       "carCity": "jakarta",
       "carCountry": " Indonesia",
-      "rating": 4,
+      "rating": 4.8,
       "Price": 200,
       "feature": [
         {
@@ -223,7 +223,7 @@
       "image": "/image/user.png",
       "Name": "bayu",
       "job": "traveler",
-      "rating": 5
+      "rating": 4.5
     },
     {
       "image": "/image/user.png",
