@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Stars from "Components/Stars";
 export default function Cars({ data }) {
-  console.log(data);
   return (
     <div className="grid grid-cols-12 gap-5 justify-center ">
       {data.map((val, index) => {
         return (
           <div
-            className="col-span-12  sm:col-span-6 lg:col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
+            className="col-span-11  sm:col-span-6 lg:col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
             key={`car-${index}`}
           >
             <figure className="h-70">
@@ -20,7 +19,7 @@ export default function Cars({ data }) {
               />
             </figure>
             <div className="justify-between flex  items-center border-b-2 border-gray-300">
-              <div className="ml-2 mt-2 w-2/3">
+              <div className="ml-2 mt-2 w-1/2">
                 <h5 className="text-2xl ">{val.carName} </h5>
                 <h4 className="text-1xl text-gray-600 ">
                   {" "}
@@ -28,10 +27,10 @@ export default function Cars({ data }) {
                 </h4>
                 <p className="text-gray-500">{val.carReleaseDate}</p>
               </div>
-              <div className="flex-wrap w-1/3 justify-between mt-2 ml-1">
+              <div className="flex-wrap w-1/2 justify-between mt-2 ml-1">
                 {val.feature.map((val2, index2) => (
                   <div
-                    className="icon-1 inline-flex justify-between items-center mx-1 mb-2"
+                    className="icon-1 w-16  inline-flex items-center mx-3 mb-2"
                     key={`feature-${index2}`}
                   >
                     <img
@@ -39,7 +38,7 @@ export default function Cars({ data }) {
                       alt={val2.featureQuantity}
                       className="h-6 w-6"
                     />
-                    <span className="text-gray-500 text-sm">
+                    <span className="text-gray-500  text-sm">
                       {val2.featureQuantity}
                     </span>
                   </div>

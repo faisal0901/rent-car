@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import { useHistory } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import iconCelendar from "assets/images/celendar-removebg-preview.png";
 
@@ -10,19 +11,20 @@ export default function CheckoutForm({ data, submitCheckout }) {
     country: "",
     city: "",
   };
-
+  const history = useHistory();
   const [state, setState] = useState(initState);
+  const [disabled, setDisabled] = useState(false);
   const duration = Math.abs(state.endDate - state.startDate);
   const diffDays = Math.ceil(duration / (1000 * 60 * 60 * 24));
-
   const HandleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
+    setDisabled(true);
   };
   const submitData = () => {
     submitCheckout({ ...state, totalDays: diffDays });
+    history.push(`search?country=${state.country}&city=${state.city}`);
   };
 
-  // right-0 -top-16 -bottom-4
   return (
     <div className="md:right-0 md:-top-16 rounded-md md:-bottom-4 top-10 left-16 md:left-24 absolute   w-3/4  z-10 ">
       <div className="card-date bg-white shadow-2xl" style={{ height: 476 }}>
@@ -35,7 +37,9 @@ export default function CheckoutForm({ data, submitCheckout }) {
               id="country"
               onChange={HandleChange}
             >
-              <option value="-">silakan pilih</option>
+              <option value="-" disabled={disabled}>
+                silakan pilih
+              </option>
               {data.map((value, index) => {
                 return (
                   <option value={value.name} key={`country-${index}`}>
@@ -55,9 +59,7 @@ export default function CheckoutForm({ data, submitCheckout }) {
               className="bg-gray-100  w-full rounded h-10 focus:outline-none"
               id="country"
             >
-              <option value="" disabled>
-                silakan pilih
-              </option>
+              <option value="">silakan pilih</option>
               <option value="saab">Saab</option>
               <option value="mercedes">Mercedes</option>
               <option value="audi">Audi</option>

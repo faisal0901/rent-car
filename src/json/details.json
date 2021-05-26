@@ -5,23 +5,19 @@
   "image": [
     {
       "imageId": 1,
-      "imageUrl": "/public/images/ac-featured.jpg"
+      "imageUrl": "/image/imageDetail.jpeg"
     },
     {
-      "imageId": 1,
-      "imageUrl": "/public/images/ac-featured.jpg"
+      "imageId": 2,
+      "imageUrl": "/image/imageDetail2.jpeg"
     },
     {
-      "imageId": 1,
-      "imageUrl": "/public/images/ac-featured.jpg"
+      "imageId": 3,
+      "imageUrl": "/image/imageDetail3.jpeg"
     },
     {
-      "imageId": 1,
-      "imageUrl": "/public/images/ac-featured.jpg"
-    },
-    {
-      "imageId": 1,
-      "imageUrl": "/public/images/ac-featured.jpg"
+      "imageId": 4,
+      "imageUrl": "/image/imageDetail4.jpeg"
     }
   ],
   "carRealiseDate": "2017",

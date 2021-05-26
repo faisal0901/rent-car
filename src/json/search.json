@@ -1,29 +1,33 @@
 {
+  "CityCordinate": {
+    "latitude": -6.2628908,
+    "longitude": 106.8822289
+  },
   "item": [
     {
       "id": 1,
       "carName": "Bmw",
       "price": 200,
       "image": [
-        { "imageId": 1, "imageUrl": "/public/images/blalbal.jpg" },
-        { "imageId": 2, "imageUrl": "/public/images/blalbal.jpg" }
+        { "imageId": 1, "imageUrl": "/image/car12.jpeg" },
+        { "imageId": 2, "imageUrl": "/image/car12.jpeg" }
       ],
       "carRealiseDate": "2017",
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
@@ -38,8 +42,8 @@
             "mobileNumber": "701-371-7774"
           }
         ],
-        "lattitude": "35.1490215",
-        "longtitude": "-90.0516285"
+        "lattitude": "-6.289700",
+        "longtitude": "106.839020"
       }
     },
     {
@@ -47,25 +51,25 @@
       "carName": "Bmw",
       "price": 200,
       "image": [
-        { "imageId": 1, "imageUrl": "/public/images/blalbal.jpg" },
-        { "imageId": 2, "imageUrl": "/public/images/blalbal.jpg" }
+        { "imageId": 1, "imageUrl": "/image/car12.jpeg" },
+        { "imageId": 2, "imageUrl": "/image/car12.jpeg" }
       ],
       "carRealiseDate": "2017",
       "feature": [
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Ac"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Fuel"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "Manual"
         },
         {
-          "featureImage": "/public/images/ac-featured.jpg",
+          "featureImage": "/image/icon.png",
           "featureQuantity": "4"
         }
       ],
@@ -80,8 +84,8 @@
             "mobileNumber": "701-371-7774"
           }
         ],
-        "lattitude": "35.1490215",
-        "longtitude": "-90.0516285"
+        "lattitude": "-6.323980",
+        "longtitude": "106.844960"
       }
     }
   ]

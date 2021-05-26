@@ -50,7 +50,10 @@ export default function Header({ isBlue, isLogin }) {
         </Link>
         <Link
           to="/login"
-          className="border-blue-600 border-2 ml-6 font-medium text-white py-2 px-6 rounded"
+          className={[
+            headerColor,
+            "border-blue-600 border-2 ml-6 font-medium  py-2 px-6 rounded",
+          ].join(" ")}
         >
           Login
         </Link>

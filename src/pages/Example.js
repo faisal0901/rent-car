@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import Maps from "Components/Maps";
+import React from "react";
+import json from "json/search.json";
 export default function Example() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  return <></>;
+  return <>{/* <Maps data={json} className="w-60 h-60" /> */}</>;
 }
