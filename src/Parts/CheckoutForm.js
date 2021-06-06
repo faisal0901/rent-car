@@ -8,8 +8,8 @@ export default function CheckoutForm({ data, submitCheckout }) {
   const initState = {
     startDate: new Date(),
     endDate: new Date(),
-    country: "",
-    city: "",
+    country: undefined,
+    city: undefined,
   };
   const history = useHistory();
   const [state, setState] = useState(initState);
@@ -20,11 +20,35 @@ export default function CheckoutForm({ data, submitCheckout }) {
     setState({ ...state, [e.target.name]: e.target.value });
     setDisabled(true);
   };
+
   const submitData = () => {
     submitCheckout({ ...state, totalDays: diffDays });
     history.push(`search?country=${state.country}&city=${state.city}`);
   };
+  const disableButton = () => {
+    const start = state.startDate;
+    const end = state.endDate;
+    let boolean;
+    if (state.country && state.city) {
+      boolean = true;
+    }
 
+    if (
+      start.getDate() === end.getDate() &&
+      start.getMonth() === end.getMonth()
+    ) {
+      boolean = false;
+    }
+    if (
+      start.getDate() >= end.getDate() &&
+      start.getMonth() >= end.getMonth()
+    ) {
+      boolean = false;
+    }
+
+    return boolean;
+  };
+  console.log(disableButton());
   return (
     <div className="md:right-0 md:-top-16 rounded-md md:-bottom-4 top-10 left-16 md:left-24 absolute   w-3/4  z-10 ">
       <div className="card-date bg-white shadow-2xl" style={{ height: 476 }}>
@@ -116,11 +140,15 @@ export default function CheckoutForm({ data, submitCheckout }) {
         <div className="flex justify-center">
           <div className="w-11/12 mt-9 ">
             <button
+              disabled={!disableButton()}
               onClick={() => submitData()}
               className="w-full bg-blue-600 hover:bg-blue-700 rounded focus:outline-none text-white text-xl rounded-sm h-10"
             >
               Find Now
             </button>
+            {!disableButton() && (
+              <p className="text-sm text-red-500">please Completed</p>
+            )}
           </div>
         </div>
       </div>

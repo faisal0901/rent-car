@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function ImageProduct({ data }) {
-  console.log(data[0].imageUrl);
   const [Image, setImage] = useState(0);
   return (
     <>
