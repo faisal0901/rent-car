@@ -2,7 +2,6 @@ import Header from "Parts/Header";
 import CarsResult from "Parts/ResultSearch.js/CarsResult";
 import React from "react";
 import ResultData from "json/search.json";
-
 import Maps from "Components/Maps";
 import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";

@@ -3,7 +3,7 @@ import ReactMapGl, { Marker } from "react-map-gl";
 import CarMarkIcon from "assets/images/CarIcon.svg";
 export default function Maps(props) {
   const { data } = props;
-  console.log(data);
+
   const [ViewPort, setViewPort] = useState({
     width: "100%",
     height: "100%",

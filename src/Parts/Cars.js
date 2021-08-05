@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Stars from "Components/Stars";
 export default function Cars({ data }) {
   return (
-    <div className="grid grid-cols-12 gap-5 justify-center ">
+    <div className="grid grid-cols-12 gap-5 justify-center">
       {data.map((val, index) => {
         return (
           <div
-            className="col-span-11  sm:col-span-6 lg:col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
+            className="col-span-11  sm:col-span-6 sm:mx-auto lg:col-span-4  px-4 mb-6 shadow-lg rounded cursor-pointer relative"
             key={`car-${index}`}
           >
             <figure className="h-70">

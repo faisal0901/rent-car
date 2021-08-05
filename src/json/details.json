@@ -26,19 +26,19 @@
   "carHorsePower": "1200cc",
   "feature": [
     {
-      "featureImage": "/public/images/ac-featured.jpg",
+      "featureImage": "/image/icon.png",
       "featureQuantity": "Ac"
     },
     {
-      "featureImage": "/public/images/ac-featured.jpg",
+      "featureImage": "/image/icon.png",
       "featureQuantity": "Fuel"
     },
     {
-      "featureImage": "/public/images/ac-featured.jpg",
+      "featureImage": "/image/icon.png",
       "featureQuantity": "Manual"
     },
     {
-      "featureImage": "/public/images/ac-featured.jpg",
+      "featureImage": "/image/icon.png",
       "featureQuantity": "4"
     }
   ],

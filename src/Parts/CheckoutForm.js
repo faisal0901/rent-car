@@ -1,54 +1,50 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import React, { useState, useEffect } from "react";
+// import DatePicker from "react-datepicker";
 import { useHistory } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-import iconCelendar from "assets/images/celendar-removebg-preview.png";
-
+// import iconCelendar from "assets/images/celendar-removebg-preview.png";
+import InputDate from "Components/Form/InputDate";
 export default function CheckoutForm({ data, submitCheckout }) {
   const initState = {
-    startDate: new Date(),
-    endDate: new Date(),
-    country: undefined,
-    city: undefined,
+    country: null,
+    city: null,
   };
   const history = useHistory();
   const [state, setState] = useState(initState);
   const [disabled, setDisabled] = useState(false);
-  const duration = Math.abs(state.endDate - state.startDate);
-  const diffDays = Math.ceil(duration / (1000 * 60 * 60 * 24));
+  const [buttonDisable, setButtonDisable] = useState(false);
+  const [child, setchild] = useState("");
+
   const HandleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
     setDisabled(true);
   };
 
+  useEffect(() => {
+    submitCheckout({
+      startDate: new Date(),
+      endDate: new Date(),
+      totalDays: 1,
+      country: "",
+      city: "",
+    });
+  }, [submitCheckout]);
+
   const submitData = () => {
-    submitCheckout({ ...state, totalDays: diffDays });
+    submitCheckout({ ...state, ...child });
     history.push(`search?country=${state.country}&city=${state.city}`);
   };
-  const disableButton = () => {
-    const start = state.startDate;
-    const end = state.endDate;
-    let boolean;
-    if (state.country && state.city) {
-      boolean = true;
-    }
-
+  function check() {
     if (
-      start.getDate() === end.getDate() &&
-      start.getMonth() === end.getMonth()
+      buttonDisable === true &&
+      state.country !== null &&
+      state.city !== null
     ) {
-      boolean = false;
+      return true;
     }
-    if (
-      start.getDate() >= end.getDate() &&
-      start.getMonth() >= end.getMonth()
-    ) {
-      boolean = false;
-    }
+    return false;
+  }
 
-    return boolean;
-  };
-  console.log(disableButton());
   return (
     <div className="md:right-0 md:-top-16 rounded-md md:-bottom-4 top-10 left-16 md:left-24 absolute   w-3/4  z-10 ">
       <div className="card-date bg-white shadow-2xl" style={{ height: 476 }}>
@@ -84,70 +80,35 @@ export default function CheckoutForm({ data, submitCheckout }) {
               id="country"
             >
               <option value="">silakan pilih</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="depok">depok</option>
+              <option value="jakarta">jakarta</option>
+              <option value="bogor">bogor</option>
             </select>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="w-11/12 mt-7 flex-col ">
-            <p className="text-gray-400 text-sm">Pick up Date</p>
-            <span className="inline-flex w-full">
-              <img
-                src={iconCelendar}
-                alt="icon"
-                className="h-10 w-12 bg-gray-100"
-              />
-              <DatePicker
-                selected={state.startDate}
-                showTimeSelect
-                minDate={new Date()}
-                name="startDate"
-                selectsStart
-                startDate={state.startDate}
-                endDate={state.endDate}
-                className="bg-gray-100  w-full rounded h-10 focus:outline-none"
-                onChange={(e) => setState({ ...state, startDate: e })}
-                dateFormat="MMMM d, yyyy h:mm aa"
-              />
-            </span>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="w-11/12 mt-7 flex-col ">
-            <p className="text-gray-400 text-sm">Drop-off Date</p>
-            <span className="inline-flex w-full">
-              <img
-                src={iconCelendar}
-                alt="icon"
-                className="h-10 w-12 bg-gray-100"
-              />
-              <DatePicker
-                selected={state.endDate}
-                showTimeSelect
-                name="endDate"
-                startDate={state.startDate}
-                endDate={state.endDate}
-                minDate={state.startDate}
-                className="bg-gray-100  w-full rounded h-10 focus:outline-none"
-                onChange={(e) => setState({ ...state, endDate: e })}
-                dateFormat="MMMM d, yyyy h:mm aa"
-              />
-            </span>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="w-11/12 mt-9 ">
+
+        <InputDate
+          showButton
+          setchild={setchild}
+          className="w-11/12"
+          isSelected={(selected) => {
+            setButtonDisable(selected());
+          }}
+        ></InputDate>
+
+        <div className="flex justify-center mt-4">
+          <div className="w-11/12">
             <button
-              disabled={!disableButton()}
               onClick={() => submitData()}
-              className="w-full bg-blue-600 hover:bg-blue-700 rounded focus:outline-none text-white text-xl rounded-sm h-10"
+              disabled={!check()}
+              className="w-full bg-blue-600 hover:bg-blue-700  focus:outline-none text-white text-xl rounded-sm h-10"
             >
               Find Now
             </button>
-            {!disableButton() && (
+            {check() === false ? (
               <p className="text-sm text-red-500">please Completed</p>
+            ) : (
+              ""
             )}
           </div>
         </div>

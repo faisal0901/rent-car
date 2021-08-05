@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function CarsResult({ data, duration }) {
   return (
     <>
@@ -29,9 +29,12 @@ export default function CarsResult({ data, duration }) {
                 </span>{" "}
                 for {duration} days{" "}
               </h5>
-              <button className="bg-blue-700 w-3/4 h-9 text-white text-md font-semibold rounded">
+              <Link
+                className="bg-blue-700 w-3/4 h-9 py-3 px-5  text-white text-md font-semibold rounded"
+                to={`detail/${val.id}`}
+              >
                 Select Car
-              </button>
+              </Link>
             </div>
             <div className="card-feature flex-wrap mt-7 w-1/4  mx-auto">
               {val.feature.map((val2, index2) => {
