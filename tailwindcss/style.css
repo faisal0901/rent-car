@@ -58,3 +58,44 @@
 .toggle.active:after {
   transform: translateY(-50%) rotate(45deg);
 }
+ol.stepper li.number {
+  border-radius: 60px;
+}
+ol.stepper li.number:not(:last-child) {
+  margin-right: 60px;
+}
+ol.stepper li.number:not(:last-child):before {
+  @apply bg-gray-500;
+  content: "";
+  z-index: -2;
+  top: 50%;
+  left: 100%;
+  position: absolute;
+  width: 75px;
+  height: 1px;
+}
+ol.stepper li.number:after {
+  @apply bg-green-600;
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.62961 8.52668L7.82252 17.2306C8.46805 18.3126 9.94113 18.5354 10.8778 17.6927L27.1842 3.02177" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1);
+  transition: 0.35s transform ease-in-out;
+}
+ol.stepper li.number.active:after {
+  @apply border border-gray-500 border-solid;
+  z-index: -1;
+  background: white;
+
+  transform: scale(1.2);
+}
+ol.stepper li.number.active {
+  @apply bg-gray-400;
+}

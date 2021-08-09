@@ -53,7 +53,9 @@
         "mobileNumber": "701-371-7774"
       }
     ],
-    "lattitude": "35.1490215",
-    "longtitude": "-90.0516285"
+    "CityCordinate": {
+      "latitude": -6.2628908,
+      "longitude": 106.8822289
+    }
   }
 }

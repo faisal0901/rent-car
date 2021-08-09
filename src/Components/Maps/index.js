@@ -21,17 +21,26 @@ export default function Maps(props) {
           setViewPort(viewPort);
         }}
       >
-        {data.item.map((val, index) => {
-          return (
-            <Marker
-              key={`mark-${index}`}
-              latitude={+val.addres.lattitude}
-              longitude={+val.addres.longtitude}
-            >
-              <img src={CarMarkIcon} alt="car icon" height="30" width="30" />
-            </Marker>
-          );
-        })}
+        {data?.item ? (
+          data.item.map((val, index) => {
+            return (
+              <Marker
+                key={`mark-${index}`}
+                latitude={+val.addres.lattitude}
+                longitude={+val.addres.longtitude}
+              >
+                <img src={CarMarkIcon} alt="car icon" height="30" width="30" />
+              </Marker>
+            );
+          })
+        ) : (
+          <Marker
+            latitude={data.CityCordinate.latitude}
+            longitude={data.CityCordinate.longitude}
+          >
+            <img src={CarMarkIcon} alt="car icon" height="30" width="30" />
+          </Marker>
+        )}
       </ReactMapGl>
     </div>
   );

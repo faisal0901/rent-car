@@ -1,8 +1,11 @@
 import InputDate from "Components/Form/InputDate";
 import { useState } from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { setCheckoutBooking } from "Store/actions/checkout";
 function ConfirmCheckout({ data, checkoutData, setCheckoutBooking }) {
+  const history = useHistory();
+
   const details = {
     price:
       checkoutData?.totalDays > 1
@@ -11,7 +14,10 @@ function ConfirmCheckout({ data, checkoutData, setCheckoutBooking }) {
     days: checkoutData.totalDays > 1 ? checkoutData.totalDays : 1,
   };
   const [disabled, setdisabled] = useState(() => false);
-
+  const confirm = () => {
+    setCheckoutBooking({ ...checkoutData, id: data.id });
+    history.push(`/checkout/${data.id}`);
+  };
   return (
     <div className="w-12/13 h-full ml-5 border rounded-xl border-gray-300">
       <div className="ml-5 mt-14">
@@ -35,6 +41,7 @@ function ConfirmCheckout({ data, checkoutData, setCheckoutBooking }) {
         <div className="w-10/12">
           <button
             disabled={!disabled}
+            onClick={() => confirm()}
             className="w-full bg-blue-600 hover:bg-blue-700  focus:outline-none text-white text-xl rounded-sm h-10"
           >
             Continue Checkout

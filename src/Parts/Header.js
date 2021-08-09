@@ -2,9 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
-export default function Header({ isBlue, isLogin }) {
+export default function Header({ isBlue, isLogin, isCentered }) {
   const headerColor = isBlue ? "text-blue-600" : "text-white";
-
+  if (isCentered) {
+    return (
+      <header className="w-full items-center text-blue-600 flex justify-center">
+        <div style={{ height: 80 }}>
+          <h1 className="text-2xl pt-5">Logo</h1>
+        </div>
+      </header>
+    );
+  }
   return (
     <header
       className={[

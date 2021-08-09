@@ -5,9 +5,11 @@ import ImageProduct from "Parts/ImageProduct";
 import JsonData from "json/details.json";
 import ConfirmCheckout from "Parts/ConfirmCheckout";
 import Feature from "Parts/Feature";
-import Address from "Parts/Addres";
+import Address from "Parts/Address";
 import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
+import Maps from "Components/Maps";
+import Footer from "Parts/Footer";
 function DetailsPage(props) {
   const { checkout } = props;
 
@@ -43,11 +45,23 @@ function DetailsPage(props) {
         </h2>
         <Feature data={JsonData}></Feature>
       </section>
-      <section className="container mx-auto mt-14">
-        <div>
+      <section className="container mx-auto mt-14 flex h-96">
+        <div className="w-1/2">
           <h1 className="text-2xl">Where to Pick Up?</h1>
-          <Address></Address>
+          <Address data={JsonData.addres}></Address>
         </div>
+        <div className="w-1/2 h-96 relative">
+          <div className="w-full mr-6 h-full">
+            <Maps
+              zoom={11}
+              className="w-full h-full"
+              data={JsonData.addres}
+            ></Maps>
+          </div>
+        </div>
+      </section>
+      <section className="container mx-auto">
+        <Footer></Footer>
       </section>
     </>
   );

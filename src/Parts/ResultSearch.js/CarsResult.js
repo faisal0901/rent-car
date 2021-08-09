@@ -39,7 +39,10 @@ export default function CarsResult({ data, duration }) {
             <div className="card-feature flex-wrap mt-7 w-1/4  mx-auto">
               {val.feature.map((val2, index2) => {
                 return (
-                  <figure className="icon inline-flex mr-2 mb-2">
+                  <figure
+                    className="icon inline-flex mr-2 mb-2"
+                    key={`feateure-2-${index2}`}
+                  >
                     <img
                       src={val2.featureImage}
                       alt="gas"
