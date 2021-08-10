@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import propTypes from "prop-types";
+
 export default function InputText(props) {
   const { value, type, placeholder, name, errorResponse, className } = props;
   const [error, seterror] = useState(null);
@@ -27,12 +27,10 @@ export default function InputText(props) {
     }
     if (type === "number") {
       if (e.target.validity.valid) {
-        // props.onChange(target);
-        console.log("ok");
-      } else {
-        console.log("gk ok");
-        // props.onChange(target);
+        props.onChange(target);
       }
+    } else {
+      props.onChange(target);
     }
   };
 
@@ -45,7 +43,6 @@ export default function InputText(props) {
           placeholder={placeholder}
           onChange={onChange}
           pattern={patern}
-          value={value}
           className="h-9  w-80 border border-gray-400 rounded focus:outline-none"
           itemID
         />

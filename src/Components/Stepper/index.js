@@ -13,7 +13,7 @@ export default function Stepper(props) {
   }
   function nextSteps() {
     if (+indexstep < totalStep) {
-      setCurrentStep(stepsKey[indexstep - 1]);
+      setCurrentStep(stepsKey[indexstep + 1]);
     }
   }
   return <div>{props.children(prevSteps, nextSteps, currentStep, steps)}</div>;

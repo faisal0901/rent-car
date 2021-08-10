@@ -5,7 +5,13 @@ import Number from "Components/Stepper/Number";
 import BookingPage from "Parts/Checkout/BookingPage";
 import Title from "Components/Stepper/Tittle";
 import MainContent from "Components/Stepper/MainContent";
-export default function Payment() {
+import { connect } from "react-redux";
+import { checkoutBooking } from "Store/actions/checkout";
+import JsonData from "json/details.json";
+import { Link } from "react-router-dom";
+import Controller from "Components/Stepper/Controller";
+import PaymentInformation from "Parts/Checkout/PaymentInformation";
+function Payment({ checkout }) {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -13,22 +19,43 @@ export default function Payment() {
     fullName: "",
     email: "",
     phoneNumber: "",
-    bankForm: "",
+    bankFrom: "",
     bankPlaceholder: "",
   };
   const [state, setState] = useState(initState);
-  const onChange = (e) => {};
+  const onChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const steps = {
     personalInformation: {
       title: "Personal Information",
       description: "please completed the blank field Bellow",
-      content: <BookingPage />,
+      content: (
+        <BookingPage
+          checkout={checkout}
+          data={state}
+          onChange={(e) => onChange(e)}
+          details={JsonData}
+        />
+      ),
     },
-    BookingInformation: {
-      title: "Personal Information",
+    paymentInformation: {
+      title: "Payment Information",
       description: "please completed the blank field Bellow",
+      content: (
+        <PaymentInformation
+          checkout={checkout}
+          data={state}
+          onChange={(e) => onChange(e)}
+          details={JsonData}
+        />
+      ),
     },
-    completedInformation: {
+    completedPayment: {
       title: "Personal Information",
       description: "please completed the blank field Bellow",
     },
@@ -49,6 +76,46 @@ export default function Payment() {
                 ></Number>
                 <Title data={steps} current={CurrentStep}></Title>
                 <MainContent data={steps} current={CurrentStep}></MainContent>
+                {CurrentStep === "personalInformation" && (
+                  <Controller>
+                    <Link
+                      className="bg-gray-400  px-6 py-3 mr-5 rounded"
+                      to={`/detail/${JsonData.id}}`}
+                    >
+                      Cancel
+                    </Link>
+                    {state.fullName !== "" &&
+                      state.email !== "" &&
+                      state.phoneNumber !== "" && (
+                        <button
+                          className="bg-blue-700 px-6 py-3 ml-5 text-white rounded"
+                          onClick={nextStep}
+                        >
+                          Continue
+                        </button>
+                      )}
+                  </Controller>
+                )}
+                {CurrentStep === "paymentInformation" && (
+                  <Controller>
+                    <button
+                      className="bg-gray-400  px-6 py-3 mr-5 rounded"
+                      to={`/detail/${JsonData.id}}`}
+                    >
+                      Cancel
+                    </button>
+                    {state.fullName !== "" &&
+                      state.email !== "" &&
+                      state.phoneNumber !== "" && (
+                        <button
+                          className="bg-blue-700 px-6 py-3 ml-5 text-white rounded"
+                          onClick={nextStep}
+                        >
+                          Continue
+                        </button>
+                      )}
+                  </Controller>
+                )}
               </>
             );
           }}
@@ -57,3 +124,8 @@ export default function Payment() {
     </>
   );
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+});
+export default connect(mapStateToProps, { checkoutBooking })(Payment);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "Parts/Header";
 import Breadcrumb from "Components/Breadcrumb";
 import ImageProduct from "Parts/ImageProduct";
@@ -12,7 +12,9 @@ import Maps from "Components/Maps";
 import Footer from "Parts/Footer";
 function DetailsPage(props) {
   const { checkout } = props;
-
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const data = [
     {
       name: "home",
