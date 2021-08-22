@@ -7,7 +7,8 @@ import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
 import ResultSearch from "pages/ResultSearch";
 import Payment from "pages/Payment";
-
+import Register from "pages/Register";
+import Login from "pages/Login";
 export default function App() {
   return (
     <>
@@ -16,6 +17,8 @@ export default function App() {
         <Route path="/detail/:id" exact component={DetailsPage} />
         <Route path="/search" exact component={ResultSearch} />
         <Route path="/checkout/:id" exact component={Payment} />
+        <Route path="/register" exact component={Register} />
+        <Route path="/login" exact component={Login} />
       </Router>
     </>
   );

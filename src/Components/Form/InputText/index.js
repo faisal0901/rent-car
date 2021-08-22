@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export default function InputText(props) {
-  const { value, type, placeholder, name, errorResponse, className } = props;
+  const { value, type, placeholder, name, defaultError, errors, className } =
+    props;
   const [error, seterror] = useState(null);
   let patern = "";
   if (type === "email") {
@@ -11,6 +12,10 @@ export default function InputText(props) {
   if (type === "number") {
     patern = "[0-9]";
   }
+  if (errors) {
+    seterror(errors);
+  }
+
   const onChange = (e) => {
     const target = {
       target: {
@@ -20,7 +25,14 @@ export default function InputText(props) {
     };
     if (type === "email") {
       if (!patern.test(e.target.value)) {
-        seterror(errorResponse);
+        seterror(defaultError);
+      } else {
+        seterror(null);
+      }
+    }
+    if (type === "password") {
+      if (e.target.value.length < 8) {
+        seterror("minimum 7 character");
       } else {
         seterror(null);
       }
@@ -43,7 +55,13 @@ export default function InputText(props) {
           placeholder={placeholder}
           onChange={onChange}
           pattern={patern}
-          className="h-9  w-80 border border-gray-400 rounded focus:outline-none"
+          value={value}
+          className={[
+            "bg-white focus:outline-none border w-full px-6 py-3 w-1/2  ",
+            error
+              ? "border-red-500 text-red-500"
+              : "focus:border-teal-500 border-gray-600 text-gray-600",
+          ].join(" ")}
           itemID
         />
         {error && (
@@ -59,5 +77,5 @@ InputText.defaultProps = {
   type: "text",
   pattern: "",
   placeholder: "please type here",
-  errorResponse: "Please match the request match",
+  defaultError: "Please input the request match",
 };

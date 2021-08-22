@@ -13,6 +13,45 @@ export default function Header({ isBlue, isLogin, isCentered }) {
       </header>
     );
   }
+  if (isLogin) {
+    return (
+      <header
+        className={[
+          headerColor,
+          "items-center  flex justify-between w-full",
+        ].join(" ")}
+      >
+        <div style={{ height: 80 }}>
+          <h1 className="text-2xl pt-5">Logo</h1>
+        </div>
+
+        <ul className={["text-1xl hidden md:inline-flex"].join(" ")}></ul>
+        <div className="md:inline-flex hidden">
+          <Link
+            to="/register"
+            className="bg-blue-600 hover:bg-blue-700 font-medium text-white py-2 px-6 rounded"
+          >
+            Register
+          </Link>
+          <Link
+            to="/login"
+            className={[
+              headerColor,
+              "border-blue-600 border-2 ml-6 font-medium  py-2 px-6 rounded",
+            ].join(" ")}
+          >
+            Login
+          </Link>
+        </div>
+        {/* <div className="flex content-end md:hidden absolute right-0">
+        <button
+          onClick={() => setToggleMenu((prev) => !prev)}
+          className={["toggle z-50", toggleMenu ? "active" : ""].join(" ")}
+        ></button>
+      </div> */}
+      </header>
+    );
+  }
   return (
     <header
       className={[

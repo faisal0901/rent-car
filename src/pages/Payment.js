@@ -15,6 +15,7 @@ function Payment({ checkout }) {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
   const initState = {
     fullName: "",
     email: "",
@@ -23,6 +24,7 @@ function Payment({ checkout }) {
     bankPlaceholder: "",
   };
   const [state, setState] = useState(initState);
+
   const onChange = (e) => {
     setState({
       ...state,
