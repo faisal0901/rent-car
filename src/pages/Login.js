@@ -1,11 +1,15 @@
 import Header from "Parts/Header";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { setAuthorizationHeader } from "../Config/axios";
+import { populateProfile } from "Store/actions/users";
 import InputText from "Components/Form/InputText";
 import LoginImage from "assets/images/loginPage.jpeg";
 import users from "Constant/api/users";
+import { useDispatch } from "react-redux";
 
 export default function Register() {
+  const dispatch = useDispatch();
   const initState = {
     email: "",
     password: "",
@@ -22,12 +26,37 @@ export default function Register() {
         email: state.email,
         password: state.password,
       })
-      .then((res) => {})
+      .then((res) => {
+        setAuthorizationHeader(res.token);
+        users.detail().then((detail) => {
+          dispatch(populateProfile(detail.data[0]));
+          console.log(detail.data[0]);
+          localStorage.setItem(
+            "token",
+            JSON.stringify({ ...res.data, email: state.email })
+          );
+          const redirect = localStorage.getItem("redirect");
+          const userCookies = {
+            name: detail.data[0].name,
+            avatar: detail.data[0].avatar,
+          };
+          console.log(userCookies);
+          const expires = new Date(
+            new Date().getTime() + 7 * 24 * 60 * 60 * 1000
+          );
+          document.cookie = `user=${JSON.stringify(
+            userCookies
+          )}; expires=${expires.toUTCString()}; path:/; ${
+            process.env.REACT_APP_HOST
+          }`;
+          history.push(redirect || "/");
+        });
+      })
       .catch((err) => {
-        setError(err.response.data.message);
+        console.log(err);
       });
   };
-  console.log(error);
+
   return (
     <>
       <div className="container mx-auto relative">
@@ -68,7 +97,7 @@ export default function Register() {
               onClick={() => submit()}
               className="py-3  text-white px-6 bg-blue-700"
             >
-              Register
+              Login
             </button>
             {error && <span className="text-red-500">{error}</span>}
           </div>

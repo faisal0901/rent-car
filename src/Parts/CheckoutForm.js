@@ -4,11 +4,21 @@ import { useHistory } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 // import iconCelendar from "assets/images/celendar-removebg-preview.png";
 import InputDate from "Components/Form/InputDate";
-export default function CheckoutForm({ data, submitCheckout }) {
+import apiCountry from "Constant/api/apiCountry";
+import apiCity from "Constant/api/apiCity";
+export default function CheckoutForm({ submitCheckout }) {
+  const [country, setcountry] = useState([""]);
+  const [city, setcity] = useState([""]);
   const initState = {
     country: null,
     city: null,
   };
+  useEffect(() => {
+    apiCountry.getAll().then((res) => {
+      setcountry(res.data);
+    });
+  }, []);
+
   const history = useHistory();
   const [state, setState] = useState(initState);
   const [disabled, setDisabled] = useState(false);
@@ -16,8 +26,15 @@ export default function CheckoutForm({ data, submitCheckout }) {
   const [child, setchild] = useState("");
 
   const HandleChange = (e) => {
+    const id = e.target.name === "country" ? e.target.value : "";
+
     setState({ ...state, [e.target.name]: e.target.value });
     setDisabled(true);
+    if (e.target.name === "country") {
+      apiCity.getCityByid(id).then((res) => {
+        setcity(res.data);
+      });
+    }
   };
 
   useEffect(() => {
@@ -60,9 +77,9 @@ export default function CheckoutForm({ data, submitCheckout }) {
               <option value="-" disabled={disabled}>
                 silakan pilih
               </option>
-              {data.map((value, index) => {
+              {country.map((value, index) => {
                 return (
-                  <option value={value.name} key={`country-${index}`}>
+                  <option value={value.id} key={`country-${index}`}>
                     {value.name}
                   </option>
                 );
@@ -77,12 +94,16 @@ export default function CheckoutForm({ data, submitCheckout }) {
               onChange={HandleChange}
               name="city"
               className="bg-gray-100  w-full rounded h-10 focus:outline-none"
-              id="country"
+              id="city"
             >
               <option value="">silakan pilih</option>
-              <option value="depok">depok</option>
-              <option value="jakarta">jakarta</option>
-              <option value="bogor">bogor</option>
+              {city.map((value, index) => {
+                return (
+                  <option value={value.id} key={`city-${index}`}>
+                    {value.name}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>

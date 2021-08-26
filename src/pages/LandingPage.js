@@ -1,7 +1,7 @@
 import Header from "Parts/Header";
 import Hero from "Parts/Hero";
-import React, { useEffect } from "react";
-import country from "json/Country.json";
+import React, { useEffect, useState } from "react";
+// import country from "json/Country.json";
 import HomePage from "json/HomePage.json";
 import Client from "Parts/Client";
 import Cars from "Parts/Cars";
@@ -11,17 +11,20 @@ import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
 
 function LandingPage(props) {
+ 
+
   useEffect(() => {
     document.title = `Rent A Cars`;
     window.scroll(0, 0);
-  });
+  
+  }, []);
 
   return (
     <>
       <section className="header-banner relative ">
         <div className="container mx-auto relative z-10">
           <Header></Header>
-          <Hero data={country} submitCheckout={props.checkoutBooking}></Hero>
+          <Hero  submitCheckout={props.checkoutBooking}></Hero>
         </div>
       </section>
       <section className="mt-40">
