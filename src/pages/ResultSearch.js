@@ -1,12 +1,24 @@
 import Header from "Parts/Header";
 import CarsResult from "Parts/ResultSearch.js/CarsResult";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ResultData from "json/search.json";
 import Maps from "Components/Maps";
+import Search from "Constant/api/Search";
 import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
+import Pagination from "Components/Pagination";
 function ResultSearch(props) {
   const { checkout } = props;
+  const [data, setdata] = useState([""]);
+  const params = new URLSearchParams(props.location.search);
+  const id = params.get("city");
+  const page = params.get("page") || 1;
+  useEffect(() => {
+    Search.getSarch(id, page).then((res) => {
+      setdata(res);
+    });
+  }, [id, page]);
+
   if (!checkout) {
     return (
       <div className="text-center h-screen w-screen  flex justify-center ">
@@ -31,11 +43,21 @@ function ResultSearch(props) {
           </div>
           <div className="w-1/2">
             <CarsResult
-              data={ResultData.item}
+              data={data}
               duration={checkout?.totalDays ?? "null"}
+              city={id}
             ></CarsResult>
           </div>
         </div>
+      </section>
+      <section className="mx-auto flex justify-center container mt-36">
+        <Pagination
+          totalPage={data.totalPage}
+          id={id}
+          activePage={data.activePage}
+          nextPage={data.nextPage}
+          prevPage={data.prevPage}
+        />
       </section>
     </>
   );

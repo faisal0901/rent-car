@@ -6,6 +6,7 @@ import JsonData from "json/details.json";
 import ConfirmCheckout from "Parts/ConfirmCheckout";
 import Feature from "Parts/Feature";
 import Address from "Parts/Address";
+import Testimony from "Parts/Testimony";
 import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
 import Maps from "Components/Maps";
@@ -60,6 +61,14 @@ function DetailsPage(props) {
               data={JsonData.addres}
             ></Maps>
           </div>
+        </div>
+      </section>
+      <section className="mt-20">
+        <div className="container mx-auto">
+          <h3 className="text-start inline text-3xl font-semibold text-blue-900">
+            What People Says
+          </h3>
+          <Testimony />
         </div>
       </section>
       <section className="container mx-auto">

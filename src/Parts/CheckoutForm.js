@@ -49,7 +49,7 @@ export default function CheckoutForm({ submitCheckout }) {
 
   const submitData = () => {
     submitCheckout({ ...state, ...child });
-    history.push(`search?country=${state.country}&city=${state.city}`);
+    history.push(`search?&city=${state.city}`);
   };
   function check() {
     if (
