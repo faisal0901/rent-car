@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "Parts/Header";
 import Breadcrumb from "Components/Breadcrumb";
 import ImageProduct from "Parts/ImageProduct";
@@ -11,12 +11,19 @@ import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
 import Maps from "Components/Maps";
 import Footer from "Parts/Footer";
+import details from "Constant/api/details";
 function DetailsPage(props) {
   const { checkout } = props;
+  const [data, setdata] = useState("");
+
   useEffect(() => {
     window.scroll(0, 0);
-  }, []);
-  const data = [
+    details.get(props.match.params.id).then((res) => {
+      setdata(res);
+    });
+  }, [props.match]);
+
+  const pages = [
     {
       name: "home",
       url: "/",
@@ -26,16 +33,17 @@ function DetailsPage(props) {
       url: "/#",
     },
   ];
+
   return (
     <>
       <section className="container mx-auto">
         <Header isBlue></Header>
       </section>
       <div className="container mx-auto ">
-        <Breadcrumb data={data} />
+        <Breadcrumb data={pages} />
         <div className="flex">
           <div className="w-8/12">
-            <ImageProduct data={JsonData.image} />
+            <ImageProduct data={data?.cars?.[0].images ?? "images"} />
           </div>
           <div className="w-5/12" style={{ height: 538 }}>
             <ConfirmCheckout checkoutData={checkout} data={JsonData} />
@@ -53,22 +61,23 @@ function DetailsPage(props) {
           <h1 className="text-2xl">Where to Pick Up?</h1>
           <Address data={JsonData.addres}></Address>
         </div>
-        <div className="w-1/2 h-96 relative">
-          <div className="w-full mr-6 h-full">
+        <div className="w-1/2  relative">
+          <div className="w-full mr-6 ">
             <Maps
               zoom={11}
-              className="w-full h-full"
+              className="w-full "
               data={JsonData.addres}
+              height={250}
             ></Maps>
           </div>
         </div>
       </section>
-      <section className="mt-20">
+      <section className="mt-40">
         <div className="container mx-auto">
           <h3 className="text-start inline text-3xl font-semibold text-blue-900">
             What People Says
           </h3>
-          <Testimony />
+          {/* <Testimony data={} /> */}
         </div>
       </section>
       <section className="container mx-auto">

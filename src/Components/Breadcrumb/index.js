@@ -13,10 +13,10 @@ export default function Breadcrumb(props) {
               }`}
             >
               {index === props.data.length - 1 ? (
-                <Link to={"/lalala"}>{val.name}</Link>
+                <Link to={"/"}>{val.name}</Link>
               ) : (
                 <div className="flex inline-flex items-center">
-                  <Link to={"/as"}>{val.name}</Link>
+                  <Link to={"/"}>{val.name}</Link>
                   <svg
                     className="fill-current w-3 h-3 mx-3"
                     xmlns="http://www.w3.org/2000/svg"

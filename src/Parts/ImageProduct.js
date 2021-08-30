@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
 export default function ImageProduct({ data }) {
+  console.log(data);
   const [Image, setImage] = useState(0);
   return (
     <>
       <figure className="w-full border rounded-2xl h-96  border-gray-400  bg-gray-200">
         <img
-          src={data[Image].imageUrl ?? "image"}
+          src={`${process.env.REACT_APP_API_HOST}/${
+            data?.[Image]?.image ?? "ini images"
+          }`}
           alt="car"
           className="object-cover h-full rounded-2xl w-full  "
         />

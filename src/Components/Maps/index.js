@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactMapGl, { Marker } from "react-map-gl";
-import CarMarkIcon from "assets/images/CarIcon.svg";
-export default function Maps(props) {
-  const { data } = props;
 
+export default function Maps(props) {
   const [ViewPort, setViewPort] = useState({
     width: "100%",
-    height: "100%",
-    latitude: data.CityCordinate.latitude,
-    longitude: data.CityCordinate.longitude,
+    height: props.height,
+    latitude: undefined,
+    longitude: undefined,
     zoom: props.zoom,
   });
+  let timeOutSearch = useRef(null);
+  useEffect(() => {
+    clearTimeout(timeOutSearch.current);
+    timeOutSearch.current = setTimeout(() => {
+      setViewPort({
+        ...ViewPort,
+        latitude: props?.data?.cars?.[0].address?.latitude,
+        longitude: props?.data?.cars?.[0].address?.longtitude,
+      });
+    }, 1000);
+  }, [ViewPort, props.data.cars]);
   return (
     <div className={props.className}>
       <ReactMapGl
@@ -21,26 +30,19 @@ export default function Maps(props) {
           setViewPort(viewPort);
         }}
       >
-        {data?.item ? (
-          data.item.map((val, index) => {
-            return (
-              <Marker
-                key={`mark-${index}`}
-                latitude={+val.addres.lattitude}
-                longitude={+val.addres.longtitude}
-              >
-                <img src={CarMarkIcon} alt="car icon" height="30" width="30" />
-              </Marker>
-            );
-          })
-        ) : (
-          <Marker
-            latitude={data.CityCordinate.latitude}
-            longitude={data.CityCordinate.longitude}
-          >
-            <img src={CarMarkIcon} alt="car icon" height="30" width="30" />
-          </Marker>
-        )}
+        {props?.data?.cars?.map((val, index) => {
+          return (
+            <Marker
+              key={`mark-${index}`}
+              latitude={val?.address?.latitude}
+              longitude={val?.address?.longtitude}
+            >
+              <span class="m-1 bg-white hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">
+                ${val?.price * props?.duration}
+              </span>
+            </Marker>
+          );
+        }) ?? "err"}
       </ReactMapGl>
     </div>
   );
