@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export default function ImageProduct({ data }) {
-  console.log(data);
   const [Image, setImage] = useState(0);
+
   return (
     <>
       <figure className="w-full border rounded-2xl h-96  border-gray-400  bg-gray-200">
@@ -15,17 +15,21 @@ export default function ImageProduct({ data }) {
         />
       </figure>
       <div className="image flex justify-between mt-4 ">
-        {data.map((value, index) => {
+        {data?.map((value, index) => {
           return (
-            <img
-              src={value.imageUrl}
-              alt={value.id}
-              key={index}
-              className="h-32 w-48 rounded-2xl"
-              onClick={() => setImage(index)}
-            />
+            <figure className="w-34 h-30 mx-2">
+              <img
+                src={`${process.env.REACT_APP_API_HOST}/${
+                  value?.image ?? "ini images"
+                }`}
+                alt={"images"}
+                key={index}
+                className="h-full w-full object-cover rounded-2xl"
+                onClick={() => setImage(index)}
+              />
+            </figure>
           );
-        })}
+        }) ?? "data not avalable"}
       </div>
     </>
   );

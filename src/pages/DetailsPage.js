@@ -14,7 +14,7 @@ import Footer from "Parts/Footer";
 import details from "Constant/api/details";
 function DetailsPage(props) {
   const { checkout } = props;
-  const [data, setdata] = useState("");
+  const [data, setdata] = useState({});
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -33,6 +33,9 @@ function DetailsPage(props) {
       url: "/#",
     },
   ];
+  if (!data.hasOwnProperty("cars")) {
+    return null;
+  }
 
   return (
     <>
@@ -43,7 +46,7 @@ function DetailsPage(props) {
         <Breadcrumb data={pages} />
         <div className="flex">
           <div className="w-8/12">
-            <ImageProduct data={data?.cars?.[0].images ?? "images"} />
+            <ImageProduct data={data.cars[0].images} />
           </div>
           <div className="w-5/12" style={{ height: 538 }}>
             <ConfirmCheckout checkoutData={checkout} data={JsonData} />
@@ -52,14 +55,14 @@ function DetailsPage(props) {
       </div>
       <section className="container mx-auto mt-14">
         <h2 className="text-2xl font-bold">
-          {JsonData?.carName ?? "Car name"}
+          {data?.cars[0]?.carName ?? "Car name"}
         </h2>
-        <Feature data={JsonData}></Feature>
+        <Feature data={data.cars[0]}></Feature>
       </section>
       <section className="container mx-auto mt-14 flex h-96">
         <div className="w-1/2">
           <h1 className="text-2xl">Where to Pick Up?</h1>
-          <Address data={JsonData.addres}></Address>
+          <Address data={data.cars[0].address}></Address>
         </div>
         <div className="w-1/2  relative">
           <div className="w-full mr-6 ">

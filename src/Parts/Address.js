@@ -5,24 +5,24 @@ export default function Address({ data }) {
     <div className="flex">
       <div className="street mt-5">
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.streetName ?? "street name"}
+          {data?.street_name ?? "street name"}
         </p>
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.City ?? "city name"}
+          {data?.carCity ?? "city name"}
         </p>
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.Country ?? "Country name"}
+          {data?.carCountry ?? "Country name"}
         </p>
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.zipCode ?? "Zip Code"}
+          {data?.zipcode ?? "Zip Code"}
         </p>
       </div>
       <div className="mt-5 ml-16">
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.phone[0]?.phoneNumber ?? "Zip Code"}
+          {data?.phone_number ?? "Zip Code"}
         </p>
         <p className="mb-2 text-left text-xl font-medium">
-          {data?.phone[0]?.mobileNumber ?? "Zip Code"}
+          {data?.mobile_number ?? ""}
         </p>
       </div>
     </div>

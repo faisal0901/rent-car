@@ -17,7 +17,6 @@ function LandingPage(props) {
     window.scroll(0, 0);
     HomePage.cars()
       .then((res) => {
-        console.log(res);
         setdata(res.cars);
       })
       .catch((err) => {

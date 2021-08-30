@@ -25,7 +25,7 @@ export default function Feature({ data }) {
         <div className="flex justify-between mt-2">
           <span className="text-xl font-light">Power</span>
           <span className="text-xl font-medium">
-            {data?.carHorsePower ?? "Realise Date"}
+            {data?.carHoursePower ?? "hourse powers"}
           </span>
         </div>
       </div>
@@ -33,16 +33,19 @@ export default function Feature({ data }) {
         {data?.feature?.map((val2, index2) => {
           return (
             <div
-              className="icon-1 w-16   inline-flex items-center mx-3 mb-7"
+              className="icon-1   inline-flex items-center mx-3 mb-7"
               key={`feature-${index2}`}
+              style={{ width: 80 }}
             >
               <img
-                src={val2.featureImage}
-                alt={val2.featureQuantity}
+                src={`${process.env.REACT_APP_API_HOST}${
+                  val2?.feature_image ?? "https://images.com"
+                }`}
+                alt={val2?.feature_quantity ?? "ini alt"}
                 className="h-8 w-8"
               />
               <span className="text-gray-500  text-base">
-                {val2.featureQuantity}
+                {val2?.feature_quantity ?? "quantiy"}
               </span>
             </div>
           );
