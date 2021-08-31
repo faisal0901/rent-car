@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Stars from "Components/Stars";
 export default function Cars({ data }) {
-  if (data.length === [""]) {
-    return <div>loading cuy</div>;
-  }
   return (
     <div className="grid grid-cols-12 gap-5 justify-center">
       {data.map((val, index) => {

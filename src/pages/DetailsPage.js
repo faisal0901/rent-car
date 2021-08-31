@@ -64,23 +64,30 @@ function DetailsPage(props) {
           <h1 className="text-2xl">Where to Pick Up?</h1>
           <Address data={data.cars[0].address}></Address>
         </div>
-        <div className="w-1/2  relative">
+        <div className="w-1/2 relative">
           <div className="w-full mr-6 ">
             <Maps
               zoom={11}
-              className="w-full "
-              data={JsonData.addres}
-              height={250}
+              className="w-full  h-full"
+              data={data.cars[0]}
+              duration={checkout?.totalDays ?? 1}
+              height={400}
             ></Maps>
           </div>
         </div>
       </section>
       <section className="mt-40">
         <div className="container mx-auto">
-          <h3 className="text-start inline text-3xl font-semibold text-blue-900">
-            What People Says
-          </h3>
-          {/* <Testimony data={} /> */}
+          {data.hasOwnProperty("rating") ? (
+            <h3 className="text-start inline text-3xl font-semibold text-blue-900">
+              What People Says
+            </h3>
+          ) : (
+            <h3 className="text-start inline text-1xl text-red-900">
+              reviews not found
+            </h3>
+          )}
+          <Testimony data={data.rating} />
         </div>
       </section>
       <section className="container mx-auto">
