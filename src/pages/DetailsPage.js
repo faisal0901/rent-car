@@ -49,7 +49,7 @@ function DetailsPage(props) {
             <ImageProduct data={data.cars[0].images} />
           </div>
           <div className="w-5/12" style={{ height: 538 }}>
-            <ConfirmCheckout checkoutData={checkout} data={JsonData} />
+            <ConfirmCheckout checkoutData={checkout} data={data.cars[0]} />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import InputText from "Components/Form/InputText";
+
 export default function BookingPage(props) {
   const { data, details, checkout } = props;
   return (

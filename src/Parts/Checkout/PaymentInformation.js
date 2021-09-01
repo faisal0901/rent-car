@@ -1,5 +1,6 @@
 import React from "react";
 import InputText from "Components/Form/InputText";
+import InputFile from "Components/Form/InputFile";
 export default function PaymentInformation(props) {
   const { data, details, checkout } = props;
   const subtotal = checkout.totalDays * details.price;
@@ -21,15 +22,23 @@ export default function PaymentInformation(props) {
             ></InputText>
           </div>
           <div>
-            <label>Email Address</label>
+            <label>Bank PlaceHolder</label>
             <InputText
               onChange={(e) => {
                 props.onChange(e);
               }}
-              type="email"
+              type="text"
               value={data.bankPlaceholder}
               name="bankPlaceholder"
             ></InputText>
+          </div>
+          <div>
+            <label>proof Payment</label>
+            <InputFile
+              onChange={(e) => {
+                props.onChange(e);
+              }}
+            ></InputFile>
           </div>
         </div>
         <div className="w-1/2">
