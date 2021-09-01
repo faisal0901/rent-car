@@ -43,6 +43,7 @@ export default function Register() {
             const userCookies = {
               name: detail.data[0].name,
               avatar: detail.data[0].avatar,
+              id: detail.data[0].id,
             };
 
             const expires = new Date(

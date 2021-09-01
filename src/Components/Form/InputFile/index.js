@@ -19,6 +19,12 @@ export default function InputFile(props) {
   const handleDeleteImages = () => {
     setFilename(null);
     setImage(null);
+    props.onChange({
+      target: {
+        name: name,
+        value: "",
+      },
+    });
   };
   return (
     <>

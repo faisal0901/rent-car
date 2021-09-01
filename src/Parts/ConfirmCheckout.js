@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { setCheckoutBooking } from "Store/actions/checkout";
 function ConfirmCheckout({ data, checkoutData, setCheckoutBooking }) {
   const history = useHistory();
-  console.log(checkoutData.totalDays);
+
   const details = {
     price:
       checkoutData?.totalDays > 1
@@ -15,7 +15,7 @@ function ConfirmCheckout({ data, checkoutData, setCheckoutBooking }) {
   };
   const [disabled, setdisabled] = useState(() => false);
   const confirm = () => {
-    setCheckoutBooking({ ...checkoutData, id: data.id });
+    setCheckoutBooking({ ...checkoutData, id: data.id, price: details.price });
     history.push(`/checkout/${data.id}`);
   };
   return (

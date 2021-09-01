@@ -38,6 +38,7 @@ export default function PaymentInformation(props) {
               onChange={(e) => {
                 props.onChange(e);
               }}
+              name="proofPayment"
             ></InputFile>
           </div>
         </div>

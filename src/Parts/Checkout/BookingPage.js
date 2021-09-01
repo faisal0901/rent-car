@@ -3,6 +3,7 @@ import InputText from "Components/Form/InputText";
 
 export default function BookingPage(props) {
   const { data, details, checkout } = props;
+  console.log(details.images[0].image);
   return (
     <section className="container mx-auto mt-10">
       <div className="mx-40 flex justify-between">
@@ -42,7 +43,9 @@ export default function BookingPage(props) {
         <div className="w-1/2">
           <figure>
             <img
-              src={details?.image[0].imageUrl ?? "image"}
+              src={`${process.env.REACT_APP_API_HOST}${
+                details?.images?.[0].image ?? "ini images"
+              }`}
               alt={details?.carName ?? "car Name"}
               className="w-full h-72"
             />
