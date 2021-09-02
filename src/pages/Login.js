@@ -37,7 +37,7 @@ export default function Register() {
 
             localStorage.setItem(
               "token",
-              JSON.stringify({ ...res.data, email: state.email })
+              JSON.stringify({ ...res, email: state.email })
             );
             const redirect = localStorage.getItem("redirect");
             const userCookies = {

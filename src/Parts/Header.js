@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import propTypes from "prop-types";
 
 export default function Header({ isBlue, isLogin, isCentered }) {
+  const history = useHistory();
   const [User, setUser] = useState(() => null);
   useEffect(() => {
     const userCookies =
@@ -24,6 +25,9 @@ export default function Header({ isBlue, isLogin, isCentered }) {
     );
   }
 
+  const goToProfile = () => {
+    history.push("/myprofile");
+  };
   return (
     <header
       className={[
@@ -65,7 +69,10 @@ export default function Header({ isBlue, isLogin, isCentered }) {
         </li>
       </ul>
       {User ? (
-        <button className="hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500 text-lg px-6 py-3 font-medium ml-6 inline-flex items-center">
+        <button
+          onClick={() => goToProfile()}
+          className="hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500 text-lg px-6 py-3 font-medium ml-6 inline-flex items-center"
+        >
           <span className="rounded-full overflow-hidden mr-3 border-2 border-orange-500">
             <img
               src={User?.avatar}

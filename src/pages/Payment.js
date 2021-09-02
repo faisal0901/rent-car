@@ -8,6 +8,7 @@ import MainContent from "Components/Stepper/MainContent";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { checkoutBooking } from "Store/actions/checkout";
+import { populateProfile } from "Store/actions/users";
 import { setAuthorizationHeader } from "../Config/axios";
 import token from "Constant/api/token";
 import Booking from "Constant/api/Booking";
@@ -16,14 +17,15 @@ import details from "Constant/api/details";
 import Controller from "Components/Stepper/Controller";
 import Completed from "Parts/Checkout/Completed";
 import PaymentInformation from "Parts/Checkout/PaymentInformation";
-function Payment({ checkout, match }) {
-  const userCookies =
-    decodeURIComponent(window.document.cookie)
-      .split(";")
-      ?.find?.((item) => item.indexOf("user") > -1)
-      ?.split("=")[1] ?? null;
+function Payment({ checkout, match, users }) {
+  console.log(users);
+  // const userCookies =
+  //   decodeURIComponent(window.document.cookie)
+  //     .split(";")
+  //     ?.find?.((item) => item.indexOf("user") > -1)
+  //     ?.split("=")[1] ?? null;
 
-  const users = userCookies ? JSON.parse(userCookies) : undefined;
+  // const users = userCookies ? JSON.parse(userCookies) : undefined;
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -70,9 +72,8 @@ function Payment({ checkout, match }) {
     token
       .get(users.id)
       .then((res) => {
-        console.log(res.token.token);
         setAuthorizationHeader(res.token.token);
-        console.log(res.token.token);
+
         Booking.post(payload).then(() => {
           nextstep();
         });
@@ -105,7 +106,7 @@ function Payment({ checkout, match }) {
           checkout={checkout}
           data={state}
           onChange={(e) => onChange(e)}
-          details={JsonData}
+          details={detail?.cars[0]}
         />
       ),
     },
@@ -134,7 +135,7 @@ function Payment({ checkout, match }) {
                   <Controller>
                     <Link
                       className="bg-gray-400  px-6 py-3 mr-5 rounded"
-                      to={`/detail/${JsonData.id}}`}
+                      to={`/detail/${match.params.id}`}
                     >
                       Cancel
                     </Link>
@@ -174,7 +175,7 @@ function Payment({ checkout, match }) {
                   <Controller>
                     <Link
                       className="bg-gray-400  px-6 py-3 mr-5 rounded"
-                      to={`/}`}
+                      to={`/`}
                     >
                       Back to home
                     </Link>
@@ -201,5 +202,8 @@ function Payment({ checkout, match }) {
 
 const mapStateToProps = (state) => ({
   checkout: state.checkout,
+  users: state.users,
 });
-export default connect(mapStateToProps, { checkoutBooking })(Payment);
+export default connect(mapStateToProps, { checkoutBooking, populateProfile })(
+  Payment
+);
