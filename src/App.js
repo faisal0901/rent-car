@@ -15,6 +15,7 @@ import MyProfile from "pages/MyProfile";
 import users from "Constant/api/users";
 import { useDispatch } from "react-redux";
 import { populateProfile } from "Store/actions/users";
+import Invoice from "Parts/Invoice";
 export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/" exact component={LandingPage} />
           <Route path="/detail/:id" exact component={DetailsPage} />
           <Route path="/search" exact component={ResultSearch} />
+          <Route path="/example" exact component={Invoice} />
           <MemberRoute path="/checkout/:id" exact component={Payment} />
           <GuestRoute path="/register" exact component={Register} />
           <GuestRoute path="/login" exact component={Login} />

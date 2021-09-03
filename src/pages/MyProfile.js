@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Booking from "Constant/api/Booking";
 import { setAuthorizationHeader } from "Config/axios";
 import { useSelector } from "react-redux";
+import Modal from "Components/Modal";
+import Invoice from "Parts/Invoice";
 export default function MyProfile() {
   const USERS = useSelector((state) => state.users);
   const [data, setdata] = useState([""]);
@@ -52,55 +54,64 @@ export default function MyProfile() {
             </tr>
           </thead>
           <tbody className="bg-white">
-            <tr>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                <div className="flex items-center">
-                  <div>
-                    <div className="text-sm leading-5 text-gray-800">#1</div>
-                  </div>
-                </div>
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                <img
-                  src={`${process.env.REACT_APP_API_HOST}/${
-                    data?.[0]?.Car?.CarsImages?.[0].image ?? "image"
-                  }`}
-                  alt="cars"
-                  className="w-26 h-20"
-                />
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                {data?.[0]?.Car?.carName ?? "carName"}
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                ${data?.[0]?.price ?? "ini price"}
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                14 days
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                  <span
-                    aria-hidden
-                    className={`absolute inset-0  opacity-50 rounded-full ${
-                      data?.[0]?.payment_status === "pending"
-                        ? "bg-red-300"
-                        : "bg-green-300"
-                    }`}
-                  ></span>
-                  <span className="relative text-xs">
-                    {" "}
-                    {data?.[0]?.payment_status ?? "status"}
-                  </span>
-                </span>
-              </td>
+            {data?.map((val, index) => {
+              return (
+                <tr key={`tr-${index}`}>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                    <div className="text-sm leading-5 text-gray-800">
+                      #{val?.invoice_number ?? "num"}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                    <img
+                      src={`${process.env.REACT_APP_API_HOST}/${
+                        val?.Car?.CarsImages?.[0].image ?? "image"
+                      }`}
+                      alt="cars"
+                      className="w-26 h-20"
+                    />
+                  </td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    {val?.Car?.carName ?? "carName"}
+                  </td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    ${val?.price ?? "ini price"}
+                  </td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    {val?.duration ?? ""} Days
+                  </td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                    <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                      <span
+                        aria-hidden
+                        className={`absolute inset-0  opacity-50 rounded-full ${
+                          val?.payment_status === "pending"
+                            ? "bg-red-300"
+                            : "bg-green-300"
+                        }`}
+                      ></span>
+                      <span className="relative text-xs">
+                        {" "}
+                        {val?.payment_status ?? "status"}
+                      </span>
+                    </span>
+                  </td>
 
-              <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                <button className="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">
-                  details Invoice
-                </button>
-              </td>
-            </tr>
+                  <td className="px-6 relative py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                    <Modal content={(toggle) => <Invoice data={val}></Invoice>}>
+                      {(toggle) => (
+                        <button
+                          onClick={toggle}
+                          className="px-5 link-wrapped py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none"
+                        >
+                          details invoice
+                        </button>
+                      )}
+                    </Modal>
+                  </td>
+                </tr>
+              );
+            }) ?? ""}
           </tbody>
         </table>
       </div>
