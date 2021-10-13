@@ -71,7 +71,10 @@ export default function Header({ isBlue, isLogin, isCentered }) {
       {User ? (
         <button
           onClick={() => goToProfile()}
-          className="hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500 text-lg px-6 py-3 font-medium ml-6 inline-flex items-center"
+          className={[
+            "hover:bg-indigo-800 transition-all duration-200  hover:text-teal-500 text-lg px-6 py-3 font-medium ml-6 inline-flex items-center",
+            headerColor,
+          ].join(" ")}
         >
           <span className="rounded-full overflow-hidden mr-3 border-2 border-orange-500">
             <img
@@ -101,13 +104,6 @@ export default function Header({ isBlue, isLogin, isCentered }) {
           </Link>
         </div>
       )}
-
-      {/* <div className="flex content-end md:hidden absolute right-0">
-        <button
-          onClick={() => setToggleMenu((prev) => !prev)}
-          className={["toggle z-50", toggleMenu ? "active" : ""].join(" ")}
-        ></button>
-      </div> */}
     </header>
   );
 }

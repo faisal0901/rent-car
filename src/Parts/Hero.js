@@ -12,7 +12,6 @@ export default function Hero({ data, submitCheckout }) {
         <h6 className="text-base mt-5 text-white">
           we present the best experience for driving
           <br />
-          Lorem, ipsum dolor.
         </h6>
       </div>
       <div className="w-full md:w-1/2 relative">

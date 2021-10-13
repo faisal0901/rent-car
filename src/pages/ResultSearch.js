@@ -68,7 +68,7 @@ function ResultSearch(props) {
           </div>
         </div>
       </section>
-      <section className="mx-auto flex justify-center container mt-36">
+      <section className="mx-auto flex justify-center container mt-16">
         <Pagination
           totalPage={data.totalPage}
           id={id}

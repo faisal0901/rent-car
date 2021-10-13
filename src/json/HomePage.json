@@ -1,241 +1,87 @@
 {
   "cars": [
     {
-      "id": 1,
-      "carName": "honda Mazda",
-      "carReleaseDate": "2017",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "rating": 4.8,
-      "Price": 200,
-      "feature": [
+      "id": 3,
+      "carName": "Audi A4",
+      "carRealiseDate": "2019",
+      "carEngine": "1798 cc",
+      "carGas": "54ltr",
+      "carHoursePower": "167 hp",
+      "price": 100,
+      "images": [
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Ac"
+          "id": 10,
+          "car_id": 3,
+          "image": "images/1630026153646.jpeg",
+          "createdAt": "2021-08-27T01:02:33.000Z",
+          "updatedAt": "2021-08-27T01:02:33.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
+          "id": 11,
+          "car_id": 3,
+          "image": "images/1630026160486.jpeg",
+          "createdAt": "2021-08-27T01:02:40.000Z",
+          "updatedAt": "2021-08-27T01:02:40.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
+          "id": 12,
+          "car_id": 3,
+          "image": "images/1630026165861.jpeg",
+          "createdAt": "2021-08-27T01:02:45.000Z",
+          "updatedAt": "2021-08-27T01:02:45.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
+          "id": 13,
+          "car_id": 3,
+          "image": "images/1630026170682.jpeg",
+          "createdAt": "2021-08-27T01:02:50.000Z",
+          "updatedAt": "2021-08-27T01:02:50.000Z"
+        },
+        {
+          "id": 14,
+          "car_id": 3,
+          "image": "images/1630026190168.jpeg",
+          "createdAt": "2021-08-27T01:03:10.000Z",
+          "updatedAt": "2021-08-27T01:03:10.000Z"
         }
       ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car1.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car.png"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "carName": "honda Mazda",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "carReleaseDate": "2017",
-      "Price": 200,
       "feature": [
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Ac"
+          "id": 6,
+          "car_id": 3,
+          "feature_quantity": "5 seat",
+          "feature_image": "images/1630050610749.svg",
+          "createdAt": "2021-08-27T07:50:10.000Z",
+          "updatedAt": "2021-08-27T07:50:10.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
+          "id": 7,
+          "car_id": 3,
+          "feature_quantity": "Fuel",
+          "feature_image": "images/1630050725628.svg",
+          "createdAt": "2021-08-27T07:52:05.000Z",
+          "updatedAt": "2021-08-27T07:52:05.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
+          "id": 8,
+          "car_id": 3,
+          "feature_quantity": "Manual",
+          "feature_image": "images/1630050739337.svg",
+          "createdAt": "2021-08-27T07:52:19.000Z",
+          "updatedAt": "2021-08-27T07:52:19.000Z"
         },
         {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
+          "id": 9,
+          "car_id": 3,
+          "feature_quantity": "Ac",
+          "feature_image": "images/1630050765269.svg",
+          "createdAt": "2021-08-27T07:52:45.000Z",
+          "updatedAt": "2021-08-27T07:52:45.000Z"
         }
       ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car2.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car2.png"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "carName": "honda Mazda",
-      "carReleaseDate": "2017",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "Price": 200,
-      "feature": [
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Ac"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
-        }
-      ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car4.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car.png"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "carName": "honda Mazda",
-      "carReleaseDate": "2017",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "Price": 200,
-      "feature": [
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Ac"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
-        }
-      ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car4.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car.png"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "carName": "honda Mazda",
-      "carReleaseDate": "2017",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "Price": 200,
-      "feature": [
-        {
-          "featureImage": "/image/icon.jpeg",
-          "featureQuantity": "Ac"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
-        }
-      ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car5.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car.png"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "carName": "honda Mazda",
-      "carCity": "jakarta",
-      "carCountry": " Indonesia",
-      "carReleaseDate": "2017",
-      "Price": 200,
-      "feature": [
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Ac"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Fuel"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "Manual"
-        },
-        {
-          "featureImage": "/image/icon.png",
-          "featureQuantity": "4"
-        }
-      ],
-      "image": [
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car7.jpeg"
-        },
-        {
-          "imageId": 1,
-          "imageUrl": "/image/car.png"
-        }
-      ]
-    }
-  ],
-  "rating": [
-    {
-      "image": "/image/user.png",
-      "Name": "bayu",
-      "job": "traveler",
-      "rating": 4.5
-    },
-    {
-      "image": "/image/user.png",
-      "Name": "bayu",
-      "job": "traveler",
-      "rating": 5
-    },
-    {
-      "image": "/image/user.png",
-      "Name": "bayu",
-      "job": "traveler",
-      "rating": 5
+      "carCity": "depok",
+      "carCountry": "Indonesia",
+      "rating": 4.333333333333333
     }
   ]
 }

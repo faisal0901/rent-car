@@ -63,6 +63,15 @@ export default function Register() {
       });
   };
 
+  const err =
+    typeof error === "object" &&
+    error?.reduce((acc, current) => {
+      if (current.field) {
+        acc[current] = "error";
+      }
+      return acc;
+    });
+  console.log(err);
   return (
     <>
       <div className="container mx-auto relative">
