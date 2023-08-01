@@ -22,7 +22,6 @@ export default function MyProfile() {
   // if (!data[0].hasOwnProperty("cars")) {
   //   return null;
   // }
-  console.log(data[0]);
 
   return (
     <div className="flex">
@@ -111,7 +110,7 @@ export default function MyProfile() {
                   </td>
                 </tr>
               );
-            }) ?? ""}
+            }) ?? " "}
           </tbody>
         </table>
       </div>

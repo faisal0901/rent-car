@@ -18,14 +18,13 @@ import Controller from "Components/Stepper/Controller";
 import Completed from "Parts/Checkout/Completed";
 import PaymentInformation from "Parts/Checkout/PaymentInformation";
 function Payment({ checkout, match, users }) {
-  console.log(users);
-  // const userCookies =
-  //   decodeURIComponent(window.document.cookie)
-  //     .split(";")
-  //     ?.find?.((item) => item.indexOf("user") > -1)
-  //     ?.split("=")[1] ?? null;
+  const userCookies =
+    decodeURIComponent(window.document.cookie)
+      .split(";")
+      ?.find?.((item) => item.indexOf("user") > -1)
+      ?.split("=")[1] ?? null;
 
-  // const users = userCookies ? JSON.parse(userCookies) : undefined;
+  const user = userCookies ? JSON.parse(userCookies) : undefined;
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -179,16 +178,6 @@ function Payment({ checkout, match, users }) {
                     >
                       Back to home
                     </Link>
-                    {/* {state.bankFrom !== "" &&
-                      state.bankPlaceHolder !== "" &&
-                      state.proofPayment !== "" && (
-                        <button
-                          className="bg-blue-700 px-6 py-3 ml-5 text-white rounded"
-                          onClick={nextStep}
-                        >
-                          Continue
-                        </button>
-                      )} */}
                   </Controller>
                 )}
               </>

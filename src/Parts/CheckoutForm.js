@@ -8,6 +8,7 @@ import apiCountry from "Constant/api/apiCountry";
 import apiCity from "Constant/api/apiCity";
 export default function CheckoutForm({ submitCheckout }) {
   const [country, setcountry] = useState([""]);
+  console.log(country);
   const [city, setcity] = useState([""]);
   const initState = {
     country: null,
@@ -31,6 +32,7 @@ export default function CheckoutForm({ submitCheckout }) {
     setState({ ...state, [e.target.name]: e.target.value });
     setDisabled(true);
     if (e.target.name === "country") {
+      console.log(id);
       apiCity.getCityByid(id).then((res) => {
         setcity(res.data);
       });
